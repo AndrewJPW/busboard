@@ -7,7 +7,6 @@ import { BusStopModel } from './busstopmodel';
 export class FetchBusesService {
 
   name: string;
-  arrivals: Arrival[];
 
   stopList: BusStopModel[] = [
     new BusStopModel('South Quay'),
@@ -20,6 +19,14 @@ export class FetchBusesService {
   // Return the arrivals list
   getStops(): BusStopModel[] {
     return this.stopList;
+  }
+
+  getStopById(id: number): BusStopModel{
+    for(let stop of this.stopList){
+      if(stop.id === id){
+        return stop;
+      }
+    }
   }
 
 }

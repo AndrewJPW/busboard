@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BusstopComponent } from './busstop/busstop.component';
 import { BusStopListComponent } from './bus-stop-list/bus-stop-list.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { BusStopListComponent } from './bus-stop-list/bus-stop-list.component';
     BusStopListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

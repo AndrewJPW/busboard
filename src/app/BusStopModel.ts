@@ -3,6 +3,7 @@ import { FetchBusesService } from "./fetch-buses.service";
 export class BusStopModel {
 
     //Data about a bus stop
+    id: string;
     stopName: string;
     arrivals: Arrival[];
     
@@ -14,16 +15,19 @@ export class BusStopModel {
         let b3: Arrival;
 
         if(n == 'South Quay'){
+            this.id = '0';
             b1 = new Arrival(147,2,'Ilford');
             b2 = new Arrival(49,3,'Canary Wharf');
             b3 = new Arrival(25,5,'Oxford Circus');
         }
         else if(n == 'Bank'){
+            this.id = '1';
             b1 = new Arrival(147,2,'Dartford');
             b2 = new Arrival(49,3,'Lewisham');
             b3 = new Arrival(25,5,'Greenwich');
         }
         else{
+            this.id = '2';
             b1 = new Arrival(147,2,'Mottingham');
             b2 = new Arrival(49,3,'Lee');
             b3 = new Arrival(25,5,'Hither Green');
@@ -42,5 +46,4 @@ export class Arrival {
         this.busDepart = dp;
         this.destination = de;
     }
-
 }

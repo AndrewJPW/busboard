@@ -3,7 +3,6 @@
 </h1>
 <div>
     <ol>
-        <li *ngFor="let elem of stopList" (click)="clickOnStop(elem)">{{ elem.stopName }}</li>
+        <li *ngFor="let elem of stopList" routerLink="/stop/{{elem.id}}">{{ elem.stopName }}</li>
     </ol>
 </div>
-<app-busstop [stop]="stop" *ngIf="stop"></app-busstop>
