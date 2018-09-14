@@ -1,0 +1,20 @@
+<div>
+
+  Busboard
+
+  Arrivals for {{ stop.name }}
+
+  <table>
+    <tr>
+      {{ stop.busNumbers[0] }} departing in 1 minute
+    </tr>
+    <tr>
+      {{ stop.busNumbers[1] }} departing in 2 minutes
+    </tr>
+  </table>
+
+  <ol>
+      <li *ngFor="let elem of stop.busNumbers">The {{ elem }} departs soon</li>
+  </ol>
+
+</div>
