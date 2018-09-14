@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BusstopComponent } from './busstop/busstop.component';
 import { BusStopListComponent } from './bus-stop-list/bus-stop-list.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [

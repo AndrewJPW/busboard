@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BusStopModel } from './busstopmodel';
+import { mergeMap } from 'rxjs/operators';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +23,25 @@ export class FetchBusesService {
     return this.stopList;
   }
 
-  getStopById(id: number): BusStopModel{
+  getStopById(id: string): BusStopModel{
     for(let stop of this.stopList){
       if(stop.id === id){
         return stop;
       }
     }
+  }
+
+  getStopByPostcode(postcode: string): BusStopModel {
+    //Make API Call to Postcode.io
+    //api.postcodes.io/postcodes/POSTCODE
+
+    return this.getStopByLonLat(0,0);
+  }
+
+  getStopByLonLat(lon: number, lat:number): BusStopModel {
+    //Make API Call to TFL.gov.uk
+
+    return this.stopList[0];
   }
 
 }
