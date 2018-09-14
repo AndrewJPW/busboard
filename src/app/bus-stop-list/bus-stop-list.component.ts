@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BusStopModel} from '../BusStopModel';
 import { Input } from '@angular/core';
+import { FetchBusesService } from '../fetch-buses.service';
 
 @Component({
   selector: 'app-bus-stop-list',
@@ -13,12 +14,8 @@ export class BusStopListComponent implements OnInit {
   stopList: BusStopModel[];
   stop: BusStopModel;
 
-  constructor() { 
-    let stop1: BusStopModel = new BusStopModel('South Quay');
-    let stop2: BusStopModel = new BusStopModel('Bank');
-    let stop3: BusStopModel = new BusStopModel('Canary Wharf');
-
-    this.stopList = [stop1,stop2,stop3];
+  constructor(private fetchBuses: FetchBusesService) { 
+    this.stopList = fetchBuses.getStops();
   }
 
   ngOnInit() {

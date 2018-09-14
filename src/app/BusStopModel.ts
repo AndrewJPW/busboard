@@ -1,3 +1,5 @@
+import { FetchBusesService } from "./fetch-buses.service";
+
 export class BusStopModel {
 
     //Data about a bus stop
@@ -7,24 +9,24 @@ export class BusStopModel {
     constructor(n: string){
         this.stopName = n;
 
-        b1: Arrival;
-        b2: Arrival;
-        b3: Arrival;
+        let b1: Arrival;
+        let b2: Arrival;
+        let b3: Arrival;
 
         if(n == 'South Quay'){
-            let b1: Arrival = new Arrival(147,2,'Ilford');
-            let b2: Arrival = new Arrival(49,3,'Canary Wharf');
-            let b3: Arrival = new Arrival(25,5,'Oxford Circus');
+            b1 = new Arrival(147,2,'Ilford');
+            b2 = new Arrival(49,3,'Canary Wharf');
+            b3 = new Arrival(25,5,'Oxford Circus');
         }
         else if(n == 'Bank'){
-            let b1: Arrival = new Arrival(147,2,'Dartford');
-            let b2: Arrival = new Arrival(49,3,'Lewisham');
-            let b3: Arrival = new Arrival(25,5,'Greenwich');
+            b1 = new Arrival(147,2,'Dartford');
+            b2 = new Arrival(49,3,'Lewisham');
+            b3 = new Arrival(25,5,'Greenwich');
         }
         else{
-            let b1: Arrival = new Arrival(147,2,'Mottingham');
-            let b2: Arrival = new Arrival(49,3,'Lee');
-            let b3: Arrival = new Arrival(25,5,'Hither Green');
+            b1 = new Arrival(147,2,'Mottingham');
+            b2 = new Arrival(49,3,'Lee');
+            b3 = new Arrival(25,5,'Hither Green');
         }
         this.arrivals = [b1,b2,b3];
     }
