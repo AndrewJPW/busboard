@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BusStopModel } from '../BusStopModel';
+import { Component, OnInit, Input } from '@angular/core';
+import { BusStopModel } from '../busstopmodel';
 
 @Component({
   selector: 'app-busstop',
@@ -8,10 +8,9 @@ import { BusStopModel } from '../BusStopModel';
 })
 export class BusstopComponent implements OnInit {
 
-  stop: BusStopModel;
+  @Input() stop: BusStopModel;
 
-  constructor() { 
-    this.stop = new BusStopModel();
+  constructor() {  
   }
 
   ngOnInit() {

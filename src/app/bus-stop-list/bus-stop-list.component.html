@@ -1,0 +1,9 @@
+<h1>
+  List of Stops
+</h1>
+<div>
+    <ol>
+        <li *ngFor="let elem of stopList" (click)="clickOnStop(elem)">{{ elem.stopName }}</li>
+    </ol>
+</div>
+<app-busstop [stop]="stop"></app-busstop>
